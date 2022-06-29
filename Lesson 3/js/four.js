@@ -7,7 +7,6 @@ function arrayLength (array) {
     while (array[length] !== undefined) {
         length++;
     }
-
     return length;
 }
 
@@ -18,8 +17,6 @@ function shift (array) {
     for (let i = 0; i < (arrayLength(array)-1); i++) {
         newArray[i] = array[i+1];
     }
-    
-    
     return newArray;
 }
 
@@ -34,9 +31,7 @@ function unshift (array, element) {
             newArray[i] = array[i-1];
         }
     }
-    
     return newArray;
-
 }
 
 function push (array, element) {
@@ -50,9 +45,7 @@ function push (array, element) {
             newArray[i] = array[i];
         }
     }
-    
     return newArray;
-
 }
 
 function pop (array) {
@@ -61,8 +54,6 @@ function pop (array) {
     for (let i = 0; i < (arrayLength(array)-1); i++) {
         newArray[i] = array[i];
     }
-    
-    
     return newArray;
 }
 

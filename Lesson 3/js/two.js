@@ -34,7 +34,7 @@ function averageNum () {
         sum += randomArray[i];
     }
 
-    return (sum / arrayLength)
+    return (sum / arrayLength);
 }
 
 alert(`Array: \n ${randomArray} \n Average: \n ${averageNum()}`);

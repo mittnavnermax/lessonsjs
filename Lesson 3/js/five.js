@@ -71,7 +71,6 @@ for (let i=0; i<rowAmount; i++) {
         if (randomArray[i][j] % divider === 0) {
             displayMultiple += (randomArray[i][j]);
             displayMultiple += ' ';
-            
         }
     }
 }
