@@ -95,7 +95,7 @@ function getNearbyNumbers(code,index) {
         case 9:
             return ['6','8','9'];
         default:
-            return ['0','8']
+            return ['0','8'];
 
     }
 
