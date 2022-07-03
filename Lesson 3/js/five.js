@@ -63,20 +63,16 @@ function getNumber() {
 
 let divider = getNumber();
 
-let displayMultiple = '';
+let displayMultiple = [];
 
 
 for (let i=0; i<rowAmount; i++) {
     for (let j=0; j<columnAmount; j++) {
         if (randomArray[i][j] % divider === 0) {
-            displayMultiple += (randomArray[i][j]);
-            displayMultiple += ' ';
+            displayMultiple.push(randomArray[i][j]);
         }
     }
 }
-
-displayMultiple = displayMultiple.split(' ');
-displayMultiple.pop();
 
 //як я зрозумів, тут створюється масив через спред, потім об'єкт Set, який приймає тільки унікальні значення з displayMultiple, правильно?
 displayMultiple = [...new Set(displayMultiple)]; 

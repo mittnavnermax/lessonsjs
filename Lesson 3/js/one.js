@@ -1,11 +1,11 @@
 function getInt(argument) {
     let numberCheck = Number(prompt(`Enter the ${argument} integer`));
-    let notInteger = Number.isInteger(numberCheck) === false || isNaN(numberCheck) || numberCheck === 0;
+    let notInteger = Number.isInteger(numberCheck) === false || isNaN(numberCheck);
 
     while (notInteger) {
         alert('This is not an integer, enter integers only!');
         numberCheck = Number(prompt(`Enter the ${argument} integer`));
-        notInteger = Number.isInteger(numberCheck) === false || isNaN(numberCheck) || numberCheck === 0;
+        notInteger = Number.isInteger(numberCheck) === false || isNaN(numberCheck);
     }
 
     return numberCheck;
