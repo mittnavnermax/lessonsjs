@@ -10,9 +10,9 @@ function max(array) {
     }
 
     const shortMax = max(array.slice(1));
-    return (array[0] > subMax) ? array[0] : shortMax;
+    return (array[0] > shortMax) ? array[0] : shortMax;
 
 }
 
-maxNum = max([1,2,3,4,5]);
+maxNum = max([1,2,9,4,5]);
 console.log(maxNum);
