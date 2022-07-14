@@ -15,6 +15,6 @@ function pow(x, n) {
 }
 
 let power = curry(pow);
-let powered = power(2)(6)
+let powered = power(2)(6);
 
 console.log(`Result: ${powered}`);
