@@ -1,14 +1,13 @@
-let summed = 0
+function summarize () {
+    let summed = 0;
 
-function sum (num) {
-
-    function sumPlus() {
+    return function sumPlus(num) {
         summed += num;
         return summed;
-    }
-
-    return sumPlus();
+    };
 }
+
+let sum = summarize();
 
 console.log(sum(3));
 console.log(sum(4));
