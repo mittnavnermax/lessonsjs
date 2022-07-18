@@ -134,6 +134,19 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.node-seeker__invisible {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
 .node-seeker h2 {
     color: #FFFFFF;
     font-size: 25px;
