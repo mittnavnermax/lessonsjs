@@ -70,34 +70,33 @@
                     </a>
                 </div>
                 <div class="node-seeker">
-                    <h2>Node Seeker</h2>
-                    <input placeholder="Enter your selector" type="text" name="input" id="node-input" onblur="getValue()">
-                    <button class="node-seeker__clear" type="button">
+                    <label for="node-input">
+                        <h2>Node Seeker</h2>
+                    </label>
+                    <input placeholder="Enter your selector" type="text" name="input" id="node-input">
+                    <button class="node-seeker__clear" type="button" onclick="clearInput()">
                         Clear
                     </button>
                     <div class="node-seeker__buttons">
-                        <button type="button">
+                        <button type="button" id="previous-button" disabled>
                             Previous
                         </button>
-                        <button type="button">
+                        <button type="button" id="button-next" disabled>
                             Next
                         </button>
-                        <button type="button">
+                        <button type="button" id="parent-button" disabled>
                             Parent
                         </button>
-                        <button type="button">
+                        <button type="button" id="first-child-button" disabled>
                             First child
                         </button>
-                        <button type="button">
+                        <button type="button" id="last-child-button" disabled>
                             Last child
                         </button>
                     </div>
                 </div>
             </section>
             <section class="numbers">
-                <h2 class="visually-hidden">
-                    Our offers
-                </h2>
                 <a name="article-1"></a>
                 <div class="offer">
                     <div class="offer__text">
