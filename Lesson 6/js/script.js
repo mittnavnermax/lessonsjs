@@ -18,15 +18,23 @@ userInput.oninput = function () {
     i = 0;
     if (foundElement.length > 1) {
         nextButton.removeAttribute("disabled");
-    
+    }
+    if (foundElement[0].parentNode && userData !== "html") {
+        parentButton.removeAttribute("disabled");
+    }
+    if (foundElement[i].firstElementChild !== null) {
+        firstChildButton.removeAttribute("disabled");
+    }
+    if (foundElement[i].lastElementChild !== null) {
+        lastChildButton.removeAttribute("disabled");
     }
 }
+
 
 function clearInput() {
     removeBorder();
     userInput.value = '';
-    nextButton.setAttribute("disabled", "");
-    previousButton.setAttribute("disabled", "");
+    disableAllButtons();
     i = 0;
 }
 
@@ -64,4 +72,43 @@ previousButton.onclick = function () {
 
     }
 
+}
+
+const parentButton = document.getElementById("parent-button");
+
+parentButton.onclick = function () {
+    let parent = foundElement[i].parentNode;
+    removeBorder();
+    parent.classList.add("active");
+    disableAllButtons();
+    
+}
+
+const firstChildButton = document.getElementById("first-child-button");
+
+firstChildButton.onclick = function () {
+    let firstChild = foundElement[i].firstElementChild;
+    removeBorder();
+    firstChild.classList.add("active");
+    disableAllButtons();
+
+    
+}
+
+const lastChildButton = document.getElementById("last-child-button");
+
+lastChildButton.onclick = function () {
+    let lastChild = foundElement[i].lastElementChild;
+    removeBorder();
+    lastChild.classList.add("active");
+    disableAllButtons();
+    
+}
+
+function disableAllButtons () {
+    previousButton.setAttribute("disabled", "");
+    nextButton.setAttribute("disabled", "");
+    parentButton.setAttribute("disabled", "");
+    firstChildButton.setAttribute("disabled", "");
+    lastChildButton.setAttribute("disabled", "");
 }
