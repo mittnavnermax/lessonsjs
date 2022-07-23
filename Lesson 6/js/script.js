@@ -1,5 +1,4 @@
 const userInput = document.getElementById("node-input");
-let userData;
 let foundElement;
 let allElements = document.getElementsByTagName("*");
 
@@ -10,24 +9,39 @@ function removeBorder() {
 
 }
 
-userInput.oninput = function () {
-    removeBorder();
-    userData = userInput.value;
-    foundElement = document.querySelectorAll(userData);
-    foundElement[0].classList.add("active");
-    i = 0;
-    if (foundElement.length > 1) {
+function findElement () {
+    foundElement.classList.add("active");
+    if (foundElement.nextElementSibling !== null) {
         nextButton.removeAttribute("disabled");
+    } else {
+        nextButton.setAttribute("disabled" ,""); 
     }
-    if (foundElement[0].parentNode && userData !== "html") {
+    if (foundElement.previousElementSibling !== null) {
+        previousButton.removeAttribute("disabled");
+    } else {
+        previousButton.setAttribute("disabled" ,""); 
+    }
+    if (foundElement.parentNode) {
         parentButton.removeAttribute("disabled");
-    }
-    if (foundElement[i].firstElementChild !== null) {
+    } 
+    if (foundElement.firstElementChild !== null) {
         firstChildButton.removeAttribute("disabled");
+    } else {
+        firstChildButton.setAttribute("disabled" ,"");
     }
-    if (foundElement[i].lastElementChild !== null) {
+    if (foundElement.lastElementChild !== null) {
         lastChildButton.removeAttribute("disabled");
+    } else {
+        lastChildButton.setAttribute("disabled" ,"");
     }
+
+}
+
+userInput.oninput = function () {
+    disableAllButtons();
+    removeBorder();
+    foundElement = document.querySelectorAll(userInput.value)[0];
+    findElement();
 }
 
 
@@ -35,41 +49,31 @@ function clearInput() {
     removeBorder();
     userInput.value = '';
     disableAllButtons();
-    i = 0;
 }
 
 
 const nextButton = document.getElementById("button-next");
 
-let i = 0;
 
 nextButton.onclick = function () {
     previousButton.removeAttribute("disabled");
-    if (i !== (foundElement.length - 1)) {
-        removeBorder();
-        i++;
-        foundElement[i].classList.add("active");
-        if (i === (foundElement.length - 1)) {
-            nextButton.setAttribute("disabled", "");
-        }
-    } 
-
+    removeBorder();
+    foundElement = foundElement.nextElementSibling;
+    findElement();
+    if (foundElement.nextElementSibling === null) {
+        nextButton.setAttribute("disabled" ,""); 
+    }
 }
 
 const previousButton = document.getElementById("previous-button");
 
 previousButton.onclick = function () {
     nextButton.removeAttribute("disabled");
-    if (i > 0) {
-        removeBorder();
-        i--;
-        foundElement[i].classList.add("active");
-        if (i === 0) {
-            previousButton.setAttribute("disabled", "");
-        }
-    } else {
-        previousButton.setAttribute("disabled", "");
-
+    removeBorder();
+    foundElement = foundElement.previousElementSibling;
+    findElement();
+    if (foundElement.previousElementSibling === null) {
+        previousButton.setAttribute("disabled" ,""); 
     }
 
 }
@@ -77,32 +81,39 @@ previousButton.onclick = function () {
 const parentButton = document.getElementById("parent-button");
 
 parentButton.onclick = function () {
-    let parent = foundElement[i].parentNode;
     removeBorder();
-    parent.classList.add("active");
-    disableAllButtons();
+    foundElement = foundElement.parentElement;
+    findElement();
+    const html = document.getElementsByTagName("html")[0];
+    if (foundElement.parentElement === html) {
+        parentButton.setAttribute("disabled" ,""); 
+    }
     
 }
 
 const firstChildButton = document.getElementById("first-child-button");
 
 firstChildButton.onclick = function () {
-    let firstChild = foundElement[i].firstElementChild;
     removeBorder();
-    firstChild.classList.add("active");
-    disableAllButtons();
-
+    foundElement = foundElement.firstElementChild;
+    findElement();
+    if (foundElement.firstElementChild === null) {
+        firstChildButton.setAttribute("disabled" ,""); 
+        lastChildButton.setAttribute("disabled" ,"");
+    }
     
 }
 
 const lastChildButton = document.getElementById("last-child-button");
 
 lastChildButton.onclick = function () {
-    let lastChild = foundElement[i].lastElementChild;
     removeBorder();
-    lastChild.classList.add("active");
-    disableAllButtons();
-    
+    foundElement = foundElement.lastElementChild;
+    findElement();
+    if (foundElement.lastElementChild === null) {
+        lastChildButton.setAttribute("disabled" ,"");
+        firstChildButton.setAttribute("disabled" ,"");
+    }
 }
 
 function disableAllButtons () {
