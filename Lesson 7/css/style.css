@@ -356,11 +356,35 @@
 .form__options {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
-    padding-left: 16px;
-    padding-right: 16px;
     border: 1px solid transparent;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.form__options-box {
+    display: block;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-bottom: 0;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.form__options-box--hidden {
+    display: none;
+
+}
+
+.form__options-box--active {
+    border-color: #00a046;
+    margin-bottom: 30px;
+
+}
+
+.form__options-box--no-border {
+    border: none;
+
 }
 
 .form__options label {
@@ -368,6 +392,7 @@
     flex-grow: 1;
     font-size: 14px;
     color: #221f1f;
+    cursor: pointer;
 }
 
 .form__options-grey-text {
@@ -377,6 +402,40 @@
     flex-grow: 1;
     font-size: 14px;
     color: #221f1f;
+
+}
+
+.form__options-info-box {
+    padding-bottom: 8px;
+    padding-left: 46px;
+    padding-top: 8px;
+    display: none;
+    flex-direction: column;
+    
+}
+
+.form__options-info-box--active {
+    display: flex;
+
+}
+
+.form__options-info-box ul {
+    max-height: 210px;
+    overflow-y: scroll;
+    list-style: none;
+    padding: 0;
+
+}
+
+.form__options-box li {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 16px;
+
+}
+
+.form__options-box li:hover {
+    background-color: #f4faf6;
 
 }
 
@@ -394,8 +453,49 @@
     height: 24px;
     width: 24px;
     margin-right: 20px;
+    cursor: pointer;
 
 }
+
+.form__rollout-button {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    padding-left: 12px;
+    padding-right: 40px;
+    border: 1px solid #d2d2d2;
+    border-radius: 4px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg fill='%233e77aa' viewBox='0 0 13 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.5 7a.956.956 0 01-.657-.256l-5.57-5.25a.839.839 0 010-1.237.968.968 0 011.312 0L6.5 4.888 11.415.257a.968.968 0 011.313 0 .839.839 0 010 1.237l-5.572 5.25A.956.956 0 016.5 7z'/%3E%3C/svg%3E");
+    background-size: 14px 9px;
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: left;
+    color: #221f1f;
+    cursor: pointer;
+
+}
+
+.form__rollout-options {
+    background-color: #fff;
+    display: none;
+    left: 0;
+    margin-top: 4px;
+    max-height: 210px;
+    overflow: auto;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 15;
+
+}
+
+.form__rollout-options--active {
+    display: block;
+}
+
 
 
 input[type='radio']:checked:after {
@@ -413,7 +513,7 @@ input[type='radio']:checked:after {
 }
 
 .form__heading {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 400;
     padding-bottom: 20px;
     margin-top: 56px;
@@ -423,9 +523,8 @@ input[type='radio']:checked:after {
 .form__userinfo legend,
 .form__goods-info legend {
     position: relative;
-    margin-bottom: 24px;
     font-size: 16px;
-    margin-bottom: 24px;
+    
 }
 
 .form__userinfo-num {
@@ -451,31 +550,231 @@ input[type='radio']:checked:after {
 }
 
 .form__buttons-item {
-    border: 2px solid green;
-    background-color: white;
+    color: #3e77aa;
+    cursor: pointer;
     padding: 8px 16px;
     border-radius: 50px;
+    border-color: transparent;
     line-height: normal;
-    cursor: pointer;
     font-size: 14px;
+    background-color: white;
 
 }
 
+.form__buttons-item--hover {
+    color: #ff7878;
+
+}
+
+.form__buttons-item--active {
+    border: 2px solid green;
+    color: #221f1f;
+    
+}
+
+.form__buttons-item--opened {
+    border-color: transparent;
+    color: #221f1f;
+}
+
 .form__inputs {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 16px;
     width: 100%;
     
+}
+
+.form__inputs--active {
+    display: grid;
 
 }
+
+.form__inputs-registered {
+    display: none;
+
+}
+
+.form__inputs-registered--active {
+    display: flex;
+
+}
+
+.form__inputs-registered-social {
+    width: 40%;
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.form__inputs-registered-social p {
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #797878;
+}
+
+.form__inputs-social-button {
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 0 0 1px #ebebeb;
+    color: #3e77aa;
+    font-size: 18px;
+    height: 48px;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    transition-property: color, background-color, border-color;
+    transition-timing-function: ease-in-out;
+}
+
+.form__inputs-social-button--hover {
+    background-color: rgb(245, 245, 245);
+    color: rgb(64, 150, 227);
+
+}
+
+.form__inputs-social-button svg {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+
+}
+
+.form__inputs-registered-social-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.form__inputs-registered-box {
+    position: relative;
+    width: 60%;
+    padding-right: 32px;
+    border-right: 1px solid #e9e9e9;
+    margin-bottom: 0;
+}
+
+.form__password-remember {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.form__password-remember label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #221f1f;
+}
+
+.form__border-text {
+    position: absolute;
+    display: block;
+    padding: 2px 0;
+    left: 100%;
+    top: 50%;
+    font-size: 14px;
+    background-color: #fff;
+    transform: translate(-50%,-50%);
+    color: #a6a5a5;
+
+}
+
+.form__password-remember a {
+    margin-left: auto;
+    color: #3e77aa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form__password-remember a:hover {
+    text-decoration: underline;
+    color: #f84147;
+
+} 
+
+.form__log-in-button {
+    width: 100%;
+    margin-bottom: 16px;
+    background-color: #00a046;
+    color: #fff;
+    font-size: 18px;
+    height: 48px;
+    border: none;
+    border-radius: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+    transition-duration: .2s;
+    transition-property: color,background-color,border-color;
+    transition-timing-function: ease-in-out;
+}
+
+.form__log-in-button--hover {
+    background-color: #00bc52;
+    
+}
+
+
+
+#passwordCheckbox {
+    appearance: auto;
+    height: auto;
+    width: 17px;
+    height: 17px;
+    margin-right: 8px;
+    position: relative;
+
+}
+
+input[type='checkbox']:checked::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #00a046;
+    border-radius: 4px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns:xlink='http://www.w3.org/1999/xlink' width='14' height='12' viewBox='0 0 14 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.10351 8.89548L1.45582 6.09578L0 7.6352L4.13584 12L14 1.56934L12.5159 0L4.10351 8.89548Z' fill='rgb(255, 255, 255)'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 10px 8px;
+    border: 1px solid #00a046;
+    position: absolute;
+    transition: background-color 0.2s ease-in-out 0s, border 0.2s ease-in-out 0s;
+    
+
+}
+
 
 .form__inputs-item {
     display: flex;
     flex-direction: column;
     flex: 1;
     
+}
+
+.form__inputs-item--box {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.form__inputs-item--password {
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#password {
+    width: 100%;
+
 }
 
 .form__inputs-item--margin {
@@ -498,13 +797,56 @@ input[type='radio']:checked:after {
     border: 1px solid #d2d2d2;
     border-radius: 4px;
     outline: none;
-    transition: border .2s ease-in-out;
+}
+
+.form__inputs-item--wrong input {
+    border: 1px solid #f84147;
+    background: url("data:image/svg+xml,%3Csvg xmlns:xlink='http://www.w3.org/1999/xlink' fill='rgb(248, 65, 71)' width='16' height='14' viewBox='0 0 14.56 12.98' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14.42 11.49-6.27-10.99a1 1 0 0 0 -1.74 0l-6.28 11a1 1 0 0 0 .87 1.5h12.56a1 1 0 0 0 .86-1.51zm-6.14-.49a1 1 0 1 1 -2 0v-1a1 1 0 1 1 2 0zm0-4a1 1 0 1 1 -2 0v-3a1 1 0 0 1 2 0z'/%3E%3C/svg%3E") right 12px center no-repeat #fff;
+    
+}
+
+.form__inputs-item--on-focus input {
+    box-shadow: 0 0 0 2px #6fc4e5;
+    z-index: 1;
+
+}
+
+.form__inputs-item-warning {
+    color: #f84147;
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+
+}
+
+.form__inputs-item-warning--active {
+    display: block;
+
 }
 
 .form__inputs-item label {
     font-size: 12px;
     color: #797878;
     margin-bottom: 4px;
+
+}
+
+.form__password-button {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+
+}
+
+.form__password-button--hover svg g {
+    fill: #ff7878;
+
+}
+
+.form__password-eye-button-hidden {
+    display: none;
 
 }
 
@@ -582,6 +924,148 @@ input[type='radio']:checked:after {
 
 }
 
+.form__map-box {
+    display: flex;
+    margin-top: 16px;
+
+}
+
+.form__map-text {
+    border-top: 1px solid #e9e9e9;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    line-height: 16px;
+    margin-top: 4px;
+    color: #797878;
+    font-size: 12px;
+
+}
+
+.form__map-box-schedule {
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+.form__map-box-schedule span{
+    margin-right: 100px;
+    margin-bottom: 4px;
+    font-size: 12px;
+    color: #221f1f;
+
+}
+
+.form__map-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-left: auto;
+    height: 100px;
+    width: 50%;
+    border: 1px solid #e9e9e9;
+    background-color: #e9e9e9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' height='100' viewBox='0 0 300 100' width='300'%3E%3Cpath d='m229.546 0h-35.601-16.35-151.6205-25.9745v6.27392 37.15608 4.0204 4.8525 6.3829 4.0621 4.8109 32.4412h134.31 17.448 19.287 26.426 19.619 17.115 65.795v-100z' fill='%23f2f2f2'%3E%3C/path%3E%3Cpath clip-rule='evenodd' d='m234.089 45.5854 31.982 31.7478 33.929-16.881v9.5479l-27.608 13.607 14.608 16.129h-11l-49.38-50.2554-48.599 35.9288 14.979 14.5905h-13.5l-74.221-73.0154-4.438 4.4054 68.943 68.61h-12.548l-62.7158-62.3358-21.5199 21.3616-3.6081 3.5813 3.6081 3.5812 34.0627 33.8117h-12.6412l-21.4215-21.2639-73.0003-72.46212v-6.27391896h6.3202l18.4476 18.31143896 18.4473-18.31143896h12.6413l-24.7678 24.58533896 31.9828 31.7477 9.9289-9.8551 46.8227-46.47793896h12.641l-20.864 20.71033896 60.069 58.5114 49.523-35.2645-43.192-43.95726948h4.5 6.5l38.768 39.31146948 19.27-18.3931c-2.605-6.4737-4.038-13.53304-4.038-20.91832869l8.939.00000078c0 26.30032791 21.556 47.69732791 48.051 47.69732791v8.8729c-20.387 0-38.308-10.6812-48.382-26.7019zm-192.4679 54.4146h-8.9388c0-17.8885-14.6613-32.4415-32.6823-32.4415v-8.8729c22.9499 0 41.6211 18.5336 41.6211 41.3144zm6.4303 0h8.9388c0-31.1926-25.566-56.5702-56.9902-56.5702v8.8729c26.4956 0 48.0514 21.397 48.0514 47.6973zm219.2566-99.99990569-8.939-.00000078c0 22.78080647 18.671 41.31440647 41.621 41.31440647v-8.8729c-18.021 0-32.682-14.553-32.682-32.44150569z' fill='%23fff' fill-rule='evenodd'%3E%3C/path%3E%3Cpath d='m188 41.8412c0-7.3599-6.052-13.3412-13.5-13.3412s-13.5 5.9813-13.5 13.3412c0 10.9588 13.5 17.1302 13.5 22.9159 0-5.7857 13.5-11.9571 13.5-22.9159z' fill='%2300a046'%3E%3C/path%3E%3Cg fill='%23000'%3E%3Cpath d='m174.114 69.0001c5.752 0 10.415-1.8996 10.415-4.2429 0-2.3432-4.663-4.2428-10.415-4.2428-5.751 0-10.414 1.8996-10.414 4.2428 0 2.3433 4.663 4.2429 10.414 4.2429z' fill-opacity='.03'%3E%3C/path%3E%3Cg fill-opacity='.05'%3E%3Cpath d='m174.5 68.2285c4.26 0 7.714-1.5542 7.714-3.4714s-3.454-3.4715-7.714-3.4715-7.714 1.5543-7.714 3.4715 3.454 3.4714 7.714 3.4714z'%3E%3C/path%3E%3Cpath d='m174.5 67.4571c2.982 0 5.4-1.2089 5.4-2.7 0-1.4912-2.418-2.7-5.4-2.7s-5.4 1.2088-5.4 2.7c0 1.4911 2.418 2.7 5.4 2.7z'%3E%3C/path%3E%3Cpath d='m174.5 66.6856c2.13 0 3.857-.8634 3.857-1.9285 0-1.0652-1.727-1.9286-3.857-1.9286s-3.857.8634-3.857 1.9286c0 1.0651 1.727 1.9285 3.857 1.9285z'%3E%3C/path%3E%3C/g%3E%3Cpath d='m174.5 65.9142c1.278 0 2.314-.518 2.314-1.1571s-1.036-1.1572-2.314-1.1572-2.314.5181-2.314 1.1572 1.036 1.1571 2.314 1.1571z' fill-opacity='.1'%3E%3C/path%3E%3Cpath d='m174.5 65.143c.426 0 .771-.1727.771-.3858 0-.213-.345-.3857-.771-.3857s-.771.1727-.771.3857c0 .2131.345.3858.771.3858z' fill-opacity='.35'%3E%3C/path%3E%3C/g%3E%3Cpath d='m174.5 46.6286c2.556 0 4.629-2.0723 4.629-4.6286s-2.073-4.6286-4.629-4.6286-4.629 2.0723-4.629 4.6286 2.073 4.6286 4.629 4.6286z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
+    background-position: 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.form__map-dates {
+    display: flex;
+
+}
+
+.form__map-dates-item {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.form__map-dates-item p {
+    margin-bottom: 12px;
+    font-size: 14px;
+
+}
+
+.form__map-dates-item-button {
+    padding: 5px 8px 3px;
+    font-size: 12px;
+    color: #3e77aa;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #fff;
+
+}
+
+.form__map-dates-item-button--active {
+    border-color: #00a046;
+    color: #221f1f;
+
+}
+
+.form__payment-email label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.form__payment-info {
+    padding-bottom: 8px;
+    padding-left: 46px;
+    padding-top: 8px;
+    display: none;
+}
+
+.form__payment-info--active {
+    display: block;
+
+}
+
+.form__payment-info--sub-active {
+    display: block;
+
+}
+
+.form__payment-email {
+    padding-top: 16px;
+
+}
+
+.form__payment-email label input{
+    height: 40px;
+    padding-right: 35px;
+    border: 1px solid #d2d2d2;
+    border-radius: 4px;
+    outline: none;
+}
+
+.form__payment-email--wrong label input {
+    border: 1px solid #f84147;
+    background: url("data:image/svg+xml,%3Csvg xmlns:xlink='http://www.w3.org/1999/xlink' fill='rgb(248, 65, 71)' width='16' height='14' viewBox='0 0 14.56 12.98' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m14.42 11.49-6.27-10.99a1 1 0 0 0 -1.74 0l-6.28 11a1 1 0 0 0 .87 1.5h12.56a1 1 0 0 0 .86-1.51zm-6.14-.49a1 1 0 1 1 -2 0v-1a1 1 0 1 1 2 0zm0-4a1 1 0 1 1 -2 0v-3a1 1 0 0 1 2 0z'/%3E%3C/svg%3E") right 12px center no-repeat #fff;
+
+}
+
+.form__payment-email label input:focus {
+    box-shadow: 0 0 0 2px #6fc4e5;
+    z-index: 1;
+}
+
+.form__payment-email label span:not(.form__inputs-item-warning){
+    color: #797878;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+
+}
+
+
+
 .footer {
     display: flex;
     flex-direction: row;
@@ -598,3 +1082,9 @@ input[type='radio']:checked:after {
     margin-right: 16px;
 
 }
+
+.form__recepient-input input:focus {
+    box-shadow: 0 0 0 2px #6fc4e5;
+    z-index: 1;
+}
+
