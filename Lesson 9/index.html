@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="object__list">
+        <form class="creator" action="" name="user">
+            <input type="text" name="userId:" placeholder="userId" id="userId">
+            <input type="text" name="title:" placeholder="title" id="title">
+            <label class="completed">
+                <input type="checkbox" name="body:" placeholder="body" id="completed">
+                <span>completed</span>
+            </label>
+            <button type="submit" id="submitButton">
+                Create post
+            </button>
+        </form>
+        <div class="object__box">
+            <input type="text" placeholder="search" id="search">
+            <select name="sorting" id="sort">
+                <option id="sort-default" value="default">
+                    Default
+                </option>
+                <option id="sort-active-first" value="active-first">
+                    Active first
+                </option>
+                <option id="sort-completed-first" value="completed-first">
+                    Completed first
+                </option>
+            </select>
+        </div>
+        <ul class="object__list-item">
+            
+        </ul>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
