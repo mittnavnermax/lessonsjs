@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+
+}
+
+.body {
+    font-family: 'Rubik', 'Arial', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    
+
+}
+
+.weather__box {
+    width: 40%;
+    padding: 20px;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: 60px 75px 100px; 
+    margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+    
+    
+}
+
+.weather__box--error {
+    display: block;
+    font-size: 30px;
+}
+
+.weather__info-box {
+    color: gray;
+
+}
+
+#city {
+    color: gray;
+    font-size: 40px;
+
+}
+
+#temp {
+    font-size: 40px;
+    font-weight: 500;
+    position: relative;
+}
+
+#temp::after {
+    position: absolute;
+    top: 0;
+    content: '°C';
+    display: inline-block;
+    font-size: 12px;
+
+}
+
+#description {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    font-size: 30px;
+    text-transform: capitalize;
+    text-align: center;
+
+}
+
+#icon {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    
+
+}
