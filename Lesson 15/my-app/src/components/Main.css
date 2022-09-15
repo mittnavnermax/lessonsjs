@@ -1,0 +1,37 @@
+.be-prepared h1 {
+    font-weight: 700;
+    font-size: 88px;
+    line-height: 100px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+}
+
+.be-prepared__link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.be-prepared__link:hover span {
+    color: #FBD784;
+
+}
+
+.be-prepared__link:hover svg path {
+    fill: #FBD784;
+
+}
+
+.be-prepared__link span {
+    font-family: 'Gilroy';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin-right: 16px;
+
+}

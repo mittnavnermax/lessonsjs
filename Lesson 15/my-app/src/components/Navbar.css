@@ -1,0 +1,45 @@
+.header {
+    font-family: 'Gilroy';
+    font-weight: 700;
+    padding: 64px 0;
+
+}
+
+.header__nav a {
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 20px;
+
+}
+
+.header__nav a:hover {
+    color: #FBD784;
+
+}
+
+.header__account {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    
+
+}
+
+.header__account span {
+    font-size: 17px;
+    line-height: 21px;
+    color: #FFFFFF;
+    margin-left: 8px;
+
+}
+
+.header__account:hover span {
+    color: #FBD784;
+}
+
+.header__account:hover svg path {
+    fill: #FBD784;
+
+}

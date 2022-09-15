@@ -1,0 +1,42 @@
+.scroll-nav {
+    position: fixed;
+    right: 67px;
+    top: 324px;
+    z-index: 20;
+
+}
+
+.scroll-nav__list {
+    list-style: none;
+
+}
+
+.scroll-nav__item {
+    border-right: rgba(255, 255, 255, 0.5) solid 3px;
+}
+
+.scroll-nav__item a {
+    font-family: 'Gilroy';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 32px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.scroll-nav__item:hover {
+    border-right: #FFFFFF solid 3px;
+
+}
+
+.scroll-nav__item:hover a {
+    color: #FBD784;
+
+}
