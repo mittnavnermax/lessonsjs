@@ -16,9 +16,11 @@ const displayData = async () => {
         
         let [USD,EUR,ignore,BTC] = result;
 
+        /*
         console.log(USD);
         console.log(EUR);
         console.log(BTC);
+        */
 
         return [USD,EUR,BTC]
         
@@ -29,3 +31,5 @@ const displayData = async () => {
 }
 
 displayData();
+
+export default displayData;
