@@ -7,7 +7,38 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <main class="page">
+        <div class="counter">
+          <div class="counter__wrapper-title">
+            <h2 class="counter__main-title">Доступна сума покупок по сервісу "Оплата частинами"</h2>
+          </div>
+          <form class="counter__form">
+            <input class="counter__input" placeholder="+380(___)" type="text">
+            <p class="counter__error">Номер телефону введений невірно, або не заповнений</p>
+            <button class="counter__btn" type="submit">Дізнатися ліміт</button>
+          </form>
+        </div>
+          <div class="result">
+            <div class="result__card">
+              <h3 class="result__title">Оплата частинами</h3>
+              <div class="result__card-wrapper">
+                <p class="result__summ-title">Сумма платежу</p>
+                <p class="result__summ">Number</p>
+                <p class="result__text">грн / міс</p>
+              </div>
+            </div>
+            <div class="result__card">
+              <h3 class="result__title">Оплата частинами</h3>
+              <div class="result__card-wrapper">
+                <p class="result__summ-title">Сумма платежу</p>
+                <p class="result__summ">Number</p>
+                <p class="result__text">грн / міс</p>
+              </div>
+            </div>
+          </div>
+      </main>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
