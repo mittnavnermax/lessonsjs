@@ -10,13 +10,13 @@ async function init(){
 
     let selectOptions = [];
 
-    function createOptions(arr, sel, plusIndex){
+    function createOptions(arr, sel){
         for(let i = 0; i < arr.length; i++){
             let optItem = document.createElement('option');
             optItem.value = arr[i];
             optItem.innerHTML = arr[i];
             optItem.dataset.buy = result[i].buy;
-            optItem.dataset.value = arr[i + plusIndex];   
+            optItem.dataset.value = arr[i];   
             sel.appendChild(optItem);
         }
     }
@@ -24,8 +24,8 @@ async function init(){
     result.forEach((e) => {
         selectOptions.push(e.ccy);
     });
-    createOptions(selectOptions, select, 0);
-    createOptions(selectOptions, selectEnd, 1);
+    createOptions(selectOptions, select);
+    createOptions(selectOptions, selectEnd);
 
 };
 init();
