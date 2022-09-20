@@ -9,17 +9,36 @@
   <title>Webpack</title>
 </head>
 <body>
-  <div class="site-container">
-    <header class="header">
-      <div class="container">
-      </div>
-    </header>
-    <main class="page">
-    </main>
-    <footer class="footer">
-      <div class="container">
-      </div>
-    </footer>
+<div class="main">
+  <form>
+    <label for="amount-input">
+      Amount
+    </label>
+    <input type="number" id="amount-input">
+
+    <label for="select">
+      From
+    </label>
+    <select id="select" name="select">
+    </select>
+
+    <button type="button"></button>
+
+    <label for="select-end">
+      From
+    </label>
+    <select id="select-end" name="select-end">
+
+    </select>
+  </form>
+
+  <button type="submit">
+    Convert
+  </button>
+  <div>
+    <span id="result">___</span>
   </div>
+</div>
+
 </body>
 </html>
