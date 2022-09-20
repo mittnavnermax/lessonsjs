@@ -9,6 +9,7 @@ https://api.privatbank.ua/#p24/exchange
 
 Приклад результату робочої програми:
 ![image](https://user-images.githubusercontent.com/37145227/191248719-d9537da9-33b4-45ba-aadd-9558986df1da.png)
+
 Результат натискання на кнопку **Convert**
 ![image](https://user-images.githubusercontent.com/37145227/191248796-3abf972b-bdbf-43d5-9118-0a2d0b0e51f3.png)
 
