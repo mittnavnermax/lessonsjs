@@ -14,15 +14,11 @@ const displayData = async () => {
     try {
         let result = await getData();
         
+
         let [USD,EUR,ignore,BTC] = result;
 
-        /*
-        console.log(USD);
-        console.log(EUR);
-        console.log(BTC);
-        */
-
-        return {'USD': USD, 'EUR': EUR, 'BTC': BTC}
+        // 'BTC': BTC
+        return {'USD': USD, 'EUR': EUR}
         
     } catch (e) {
         console.error(e);
