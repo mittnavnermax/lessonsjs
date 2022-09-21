@@ -14,13 +14,10 @@ async function init(){
     function convert(amount, sale, buy, baseCcy){
         let result = Number();
         result = (amount * sale) / buy;
-        
+
         if (baseCcy){
             if (baseCcy === bankCCY){
                 result = amount / buy;  
-            } else {
-                // for BTC double convertation
-                result = amount * buy;   
             }
         }
         return result;
@@ -84,6 +81,7 @@ async function init(){
         let toOption = getOption(toSelectValue, toSelect);
         let sale = fromOption.dataset.sale;
         let buy = toOption.dataset.buy;
+        let fromCcy = fromOption.dataset.baseCcy;
         
         if (amountInput.value){
             let convertResult = '';
