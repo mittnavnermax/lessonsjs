@@ -10,34 +10,39 @@
 </head>
 <body>
 <div class="main">
+
   <form>
-    <label for="amount-input">
-      Amount
-    </label>
-    <input type="number" id="amount-input">
 
-    <label for="select">
-      From
-    </label>
-    <select id="select" name="select">
-    </select>
+    <div class="form-element">
+      <label for="amount-input">
+        Amount:
+      </label>
+      <input id="amount-input" type="number">
+    </div>
 
-    <button type="button"></button>
+    <div id="from" class="form-element form-element-select"></div>
 
-    <label for="select-end">
-      From
-    </label>
-    <select id="select-end" name="select-end">
+    <div class="form-element">
+      <button id="change" type="button" name="change">
+        change
+      </button>
+    </div>
 
-    </select>
+    <div id="to" class="form-element form-element-select"></div>
+
+    <div class="form-element">
+      <button id="convert" type="button" name="convert">
+        Convert
+      </button>
+    </div>
+
   </form>
 
-  <button type="submit">
-    Convert
-  </button>
-  <div>
-    <span id="result">___</span>
+  <div class="result-holder">
+    <div class="result-element">Result:</div> 
+    <div class="result-element" id="result"></div>
   </div>
+
 </div>
 
 </body>

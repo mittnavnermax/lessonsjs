@@ -22,7 +22,7 @@ const displayData = async () => {
         console.log(BTC);
         */
 
-        return [USD,EUR,BTC]
+        return {'USD': USD, 'EUR': EUR, 'BTC': BTC}
         
     } catch (e) {
         console.error(e);
