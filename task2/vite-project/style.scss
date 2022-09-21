@@ -43,13 +43,23 @@
     &__form {
       padding: 30px;
     }
+
+    &__amount {
+      color: ghostwhite;
+      
+
+    }
 }
 .result {
-  display: flex;
 
   &__card {
     text-align: center;
     margin-right: 40px;
+
+    &-box {
+      display: flex;
+
+    }
   }
 
   &__title {

@@ -14,27 +14,43 @@
             <h2 class="counter__main-title">Доступна сума покупок по сервісу "Оплата частинами"</h2>
           </div>
           <form class="counter__form">
-            <input class="counter__input" placeholder="+380(___)" type="text">
+            <input class="counter__input" placeholder="+380(___)" type="text" id="number">
             <p class="counter__error">Номер телефону введений невірно, або не заповнений</p>
-            <button class="counter__btn" type="submit">Дізнатися ліміт</button>
+            <button class="counter__btn" type="button" id="limit-button">Дізнатися ліміт</button>
           </form>
         </div>
           <div class="result">
-            <div class="result__card">
-              <h3 class="result__title">Оплата частинами</h3>
-              <div class="result__card-wrapper">
-                <p class="result__summ-title">Сумма платежу</p>
-                <p class="result__summ">Number</p>
-                <p class="result__text">грн / міс</p>
+            <div class="result__card-box">
+              <div class="result__card">
+                <h3 class="result__title">Оплата частинами</h3>
+                <div class="result__card-wrapper">
+                  <p class="result__summ-title">Сумма платежу</p>
+                  <p class="result__summ">Number</p>
+                  <p class="result__text">грн / міс</p>
+                </div>
+              </div>
+              <div class="result__card">
+                <h3 class="result__title">Оплата частинами</h3>
+                <div class="result__card-wrapper">
+                  <p class="result__summ-title">Сумма платежу</p>
+                  <p class="result__summ">Number</p>
+                  <p class="result__text">грн / міс</p>
+                </div>
               </div>
             </div>
-            <div class="result__card">
-              <h3 class="result__title">Оплата частинами</h3>
-              <div class="result__card-wrapper">
-                <p class="result__summ-title">Сумма платежу</p>
-                <p class="result__summ">Number</p>
-                <p class="result__text">грн / міс</p>
-              </div>
+            <div class="result__options">
+              <p class="result__loan">
+                Строк кредитування
+              </p>
+              <input type="text" id="input-months" value="12" min="1" max="12">
+              <input type="range" id="range-months" name="month" min="1" max="12" value="12">
+            </div>
+            <div class="result__options">
+              <p class="result__loan">
+                Вартість товару
+              </p>
+              <input type="text" id="input-amount" min="1">
+              <input type="range" id="range-amount" name="month" min="1">
             </div>
           </div>
       </main>
