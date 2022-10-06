@@ -1,0 +1,35 @@
+table {
+    border-spacing: 0;
+    border: 0.5px solid black;
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+}
+
+.table {
+    width: 800px;
+
+}
+
+th {
+    border: 0.5px solid black;
+    background-color: #696969;
+    color: #ffffff;
+
+}
+
+.table__client {
+    overflow: hidden;
+    height: 45px;
+
+}
+
+.table__client:nth-child(even) {
+    background-color: #e1e0e0;
+
+}
+
+tbody {
+    border: 0.5px solid black;
+
+}
